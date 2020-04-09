@@ -32,8 +32,30 @@ const Ray = function() {
           return shifted;
         },
         
-        include: function() {
+        include: function(value) {
+          for (let i = 0; i < this.length; i++) {
+            if(this[i] === value) {
+              return true;
+            }
+          }
+          return false;
+        },
+        
+        indexOf: function(value) {
+          for (let i = 0; i < this.length; i++) {
+            if (this[i] === value) {
+              return i;
+            }
+          }
+          return -1;
+        },
 
+        reverse: function() {
+
+          for (let i = 1; i <= this.length; i++) {
+            this[0] = this[this.length - i];
+            
+          }
         }
       }
 };
